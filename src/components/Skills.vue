@@ -48,6 +48,12 @@
             </div>
           </div>
           <div class="skill-item">
+            <span class="skill-name">Spring Boot</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 78%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
             <span class="skill-name">Database (SQL/NoSQL)</span>
             <div class="skill-bar">
               <div class="skill-level" style="width: 75%"></div>
