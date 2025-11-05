@@ -2,7 +2,7 @@
   <section id="portfolio" class="portfolio">
     <h2 class="section-title">ポートフォリオ</h2>
     <div class="portfolio-grid">
-      <div v-for="project in projects" :key="project.id" class="project-card">
+      <div v-for="project in profileData" :key="project.id" class="project-card">
         <div class="project-image">
           <img :src="project.image" :alt="project.title" />
         </div>
@@ -13,8 +13,8 @@
             <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
           </div>
           <div class="project-links">
-            <a :href="project.demo" target="_blank" class="btn-demo">デモ</a>
-            <a :href="project.github" target="_blank" class="btn-github">GitHub</a>
+            <a :href="project.demoUrl" target="_blank" class="btn-demo">{{ project.demoLabel }}</a>
+            <a :href="project.sourceUrl" target="_blank" class="btn-github">{{ project.sourceLabel }}</a>
           </div>
         </div>
       </div>
@@ -25,46 +25,10 @@
 <script>
 export default {
   name: 'Portfolio',
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          title: 'Eコマースサイト',
-          description: 'Vue.js と Node.js を使用したフルスタックのEコマースアプリケーション。ショッピングカート、決済機能を実装。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['Vue.js', 'Node.js', 'MongoDB'],
-          demo: 'https://example.com/demo1',
-          github: 'https://github.com'
-        },
-        {
-          id: 2,
-          title: 'タスク管理アプリ',
-          description: 'React と Firebase を使用したリアルタイムタスク管理アプリケーション。ドラッグ&ドロップ機能付き。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['React', 'Firebase', 'Material-UI'],
-          demo: 'https://example.com/demo2',
-          github: 'https://github.com'
-        },
-        {
-          id: 3,
-          title: 'ブログプラットフォーム',
-          description: 'Next.js と TypeScript で構築したモダンなブログプラットフォーム。SEO最適化とMarkdownサポート。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-          demo: 'https://example.com/demo3',
-          github: 'https://github.com'
-        },
-        {
-          id: 4,
-          title: 'データビジュアライゼーション',
-          description: 'D3.js を使用したインタラクティブなデータ可視化ダッシュボード。リアルタイムデータ更新対応。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['Vue.js', 'D3.js', 'WebSocket'],
-          demo: 'https://example.com/demo4',
-          github: 'https://github.com'
-        }
-      ]
+  props: {
+    profileData: {
+      type: Array,
+      required: true
     }
   }
 }

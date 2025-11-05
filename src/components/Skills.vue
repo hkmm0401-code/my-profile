@@ -2,85 +2,13 @@
   <section id="skills" class="skills">
     <h2 class="section-title">スキル</h2>
     <div class="skills-content">
-      <div class="skill-category">
-        <h3>フロントエンド</h3>
+      <div v-for="category in profileData" :key="category.category" class="skill-category">
+        <h3>{{ category.category }}</h3>
         <div class="skill-items">
-          <div class="skill-item">
-            <span class="skill-name">Vue.js</span>
+          <div v-for="skill in category.items" :key="skill.name" class="skill-item">
+            <span class="skill-name">{{ skill.name }}</span>
             <div class="skill-bar">
-              <div class="skill-level" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">React</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">JavaScript / TypeScript</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 88%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">HTML / CSS</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 95%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>バックエンド</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <span class="skill-name">Node.js</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Python</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Spring Boot</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 78%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Database (SQL/NoSQL)</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 75%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>その他</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <span class="skill-name">Git / GitHub</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Docker</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 70%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">CI/CD</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 75%"></div>
+              <div class="skill-level" :style="{ width: skill.level + '%' }"></div>
             </div>
           </div>
         </div>
@@ -91,7 +19,13 @@
 
 <script>
 export default {
-  name: 'Skills'
+  name: 'Skills',
+  props: {
+    profileData: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 

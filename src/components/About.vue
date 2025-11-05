@@ -2,29 +2,13 @@
   <section id="about" class="about">
     <h2 class="section-title">自己紹介</h2>
     <div class="about-content">
-      <p>
-        こんにちは！久積奎吾と申します。Web開発に情熱を持つフルスタックデベロッパーです。
-      </p>
-      <p>
-        フロントエンドとバックエンドの両方で豊富な経験があり、
-        特にモダンなJavaScriptフレームワーク（Vue.js、React）とNode.jsを使用した開発を得意としています。
-      </p>
-      <p>
-        ユーザー体験を重視したインタラクティブなWebアプリケーションの構築に取り組んでおり、
-        常に最新の技術トレンドをキャッチアップし、より良いソリューションを提供することを心がけています。
+      <p v-for="(paragraph, index) in profileData.paragraphs" :key="index">
+        {{ paragraph }}
       </p>
       <div class="info-cards">
-        <div class="info-card">
-          <h3>📍 所在地</h3>
-          <p>東京都</p>
-        </div>
-        <div class="info-card">
-          <h3>💼 職業</h3>
-          <p>Web デベロッパー</p>
-        </div>
-        <div class="info-card">
-          <h3>🎓 学歴</h3>
-          <p>情報工学専攻</p>
+        <div v-for="card in profileData.infoCards" :key="card.title" class="info-card">
+          <h3>{{ card.icon }} {{ card.title }}</h3>
+          <p>{{ card.value }}</p>
         </div>
       </div>
     </div>
@@ -33,7 +17,13 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  props: {
+    profileData: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 
