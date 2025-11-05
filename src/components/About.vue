@@ -2,30 +2,13 @@
   <section id="about" class="about">
     <h2 class="section-title">自己紹介</h2>
     <div class="about-content">
-      <p>
-        こんにちは！久積奎吾と申します。音響に情熱を持つ音響エンジニアです。
-      </p>
-      <p>
-        音響技術専門学校を卒業後、レコーディングスタジオで5年間勤務し、
-        様々なアーティストの録音、ミキシング、マスタリングを担当してきました。
-      </p>
-      <p>
-        現在はフリーランスとして独立し、レコーディング、ライブPA、音響デザインなど
-        幅広い音響制作に携わっています。常にクライアントのビジョンを実現し、
-        最高の音質を追求することを心がけています。
+      <p v-for="(paragraph, index) in profileData.paragraphs" :key="index">
+        {{ paragraph }}
       </p>
       <div class="info-cards">
-        <div class="info-card">
-          <h3>📍 所在地</h3>
-          <p>東京都</p>
-        </div>
-        <div class="info-card">
-          <h3>💼 職業</h3>
-          <p>音響エンジニア</p>
-        </div>
-        <div class="info-card">
-          <h3>🎓 学歴</h3>
-          <p>音響技術専門学校卒業</p>
+        <div v-for="card in profileData.infoCards" :key="card.title" class="info-card">
+          <h3>{{ card.icon }} {{ card.title }}</h3>
+          <p>{{ card.value }}</p>
         </div>
       </div>
     </div>
@@ -34,7 +17,13 @@
 
 <script>
 export default {
-  name: 'About'
+  name: 'About',
+  props: {
+    profileData: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 

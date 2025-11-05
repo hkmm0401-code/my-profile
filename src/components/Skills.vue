@@ -2,85 +2,13 @@
   <section id="skills" class="skills">
     <h2 class="section-title">スキル</h2>
     <div class="skills-content">
-      <div class="skill-category">
-        <h3>レコーディング</h3>
+      <div v-for="category in profileData" :key="category.category" class="skill-category">
+        <h3>{{ category.category }}</h3>
         <div class="skill-items">
-          <div class="skill-item">
-            <span class="skill-name">Pro Tools</span>
+          <div v-for="skill in category.items" :key="skill.name" class="skill-item">
+            <span class="skill-name">{{ skill.name }}</span>
             <div class="skill-bar">
-              <div class="skill-level" style="width: 95%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Logic Pro</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Ableton Live</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">マイクロフォン技術</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 90%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>ミキシング・マスタリング</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <span class="skill-name">ミキシング</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 92%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">マスタリング</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 88%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">アナログ機材</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">プラグイン処理</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 90%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3>その他</h3>
-        <div class="skill-items">
-          <div class="skill-item">
-            <span class="skill-name">ライブPA</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 87%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">音響デザイン</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 83%"></div>
-            </div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">音響機材メンテナンス</span>
-            <div class="skill-bar">
-              <div class="skill-level" style="width: 80%"></div>
+              <div class="skill-level" :style="{ width: skill.level + '%' }"></div>
             </div>
           </div>
         </div>
@@ -91,7 +19,13 @@
 
 <script>
 export default {
-  name: 'Skills'
+  name: 'Skills',
+  props: {
+    profileData: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 

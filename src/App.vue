@@ -1,11 +1,11 @@
 <template>
   <div class="app">
-    <Header />
+    <Header :currentProfile="currentProfile" @toggle-profile="toggleProfile" />
     <main class="container">
-      <Hero />
-      <About />
-      <Skills />
-      <Portfolio />
+      <Hero :profileData="profileData.hero" />
+      <About :profileData="profileData.about" />
+      <Skills :profileData="profileData.skills" />
+      <Portfolio :profileData="profileData.portfolio" />
       <Contact />
     </main>
     <Footer />
@@ -20,6 +20,7 @@ import Skills from './components/Skills.vue'
 import Portfolio from './components/Portfolio.vue'
 import Contact from './components/Contact.vue'
 import Footer from './components/Footer.vue'
+import { profiles } from './data/profiles.js'
 
 export default {
   name: 'App',
@@ -31,6 +32,22 @@ export default {
     Portfolio,
     Contact,
     Footer
+  },
+  data() {
+    return {
+      currentProfile: 'soundEngineer',
+      profiles: profiles
+    }
+  },
+  computed: {
+    profileData() {
+      return this.profiles[this.currentProfile]
+    }
+  },
+  methods: {
+    toggleProfile() {
+      this.currentProfile = this.currentProfile === 'webDeveloper' ? 'soundEngineer' : 'webDeveloper'
+    }
   }
 }
 </script>

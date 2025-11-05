@@ -2,7 +2,7 @@
   <section id="portfolio" class="portfolio">
     <h2 class="section-title">ポートフォリオ</h2>
     <div class="portfolio-grid">
-      <div v-for="project in projects" :key="project.id" class="project-card">
+      <div v-for="project in profileData" :key="project.id" class="project-card">
         <div class="project-image">
           <img :src="project.image" :alt="project.title" />
         </div>
@@ -13,8 +13,8 @@
             <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
           </div>
           <div class="project-links">
-            <a :href="project.demo" target="_blank" class="btn-demo">詳細</a>
-            <a :href="project.github" target="_blank" class="btn-github">サンプル視聴</a>
+            <a :href="project.demoUrl" target="_blank" class="btn-demo">{{ project.demoLabel }}</a>
+            <a :href="project.sourceUrl" target="_blank" class="btn-github">{{ project.sourceLabel }}</a>
           </div>
         </div>
       </div>
@@ -25,46 +25,10 @@
 <script>
 export default {
   name: 'Portfolio',
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          title: 'インディーバンドアルバム制作',
-          description: '新人インディーバンドのデビューアルバムをフルプロデュース。レコーディング、ミキシング、マスタリングまで全工程を担当。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['レコーディング', 'ミキシング', 'マスタリング'],
-          demo: 'https://example.com/demo1',
-          github: 'https://soundcloud.com'
-        },
-        {
-          id: 2,
-          title: 'ライブイベント音響',
-          description: '大型音楽フェスティバルのメインステージPA担当。500人規模の会場で最高の音響環境を提供。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['ライブPA', '音響設計', 'イベント'],
-          demo: 'https://example.com/demo2',
-          github: 'https://soundcloud.com'
-        },
-        {
-          id: 3,
-          title: 'ポッドキャスト制作',
-          description: '人気ポッドキャストシリーズの音響制作。録音、編集、マスタリングまで一貫して担当。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['録音', '編集', 'ポッドキャスト'],
-          demo: 'https://example.com/demo3',
-          github: 'https://soundcloud.com'
-        },
-        {
-          id: 4,
-          title: '映像作品音響デザイン',
-          description: '短編映画の音響デザインとミキシング。効果音の制作からファイナルミックスまで担当。',
-          image: 'https://via.placeholder.com/400x250',
-          tags: ['音響デザイン', '効果音', '映像音響'],
-          demo: 'https://example.com/demo4',
-          github: 'https://soundcloud.com'
-        }
-      ]
+  props: {
+    profileData: {
+      type: Array,
+      required: true
     }
   }
 }
