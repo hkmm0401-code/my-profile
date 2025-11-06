@@ -147,6 +147,71 @@ export const profiles = {
         ]
       }
     ],
+    equipment: [
+      {
+        category: 'PC',
+        items: [
+          'Apple / MacBook Air (13-inch, M3, 2024)'
+        ]
+      },
+      {
+        category: 'DAW',
+        items: [
+          'Avid / Protools2024.3'
+        ]
+      },
+      {
+        category: 'Mixer',
+        items: [
+          'SSL / BiG SiX'
+        ]
+      },
+      {
+        category: 'I/O',
+        items: [
+          'MACKIE / DL16S',
+          'STEINBERG / UR28M'
+        ]
+      },
+      {
+        category: 'Speaker',
+        items: [
+          'NEUMANN / KH120A',
+          'SONY / zs-m5'
+        ]
+      },
+      {
+        category: 'Headphone',
+        items: [
+          'SONY / MDR-CD900ST',
+          'AKG / Q701'
+        ]
+      },
+      {
+        category: 'HA/Compressor',
+        items: [
+          'DRAWMER / 1960'
+        ]
+      },
+      {
+        category: 'Mic',
+        items: [
+          'NEUMANN / TLM102',
+          'audio technica / ATM25',
+          'SHURE / SM57 x2',
+          'AKG / P2',
+          'AKG / P4 x4',
+          'AKG / P17 x2',
+          'LEWITT / LCT040 x2'
+        ]
+      },
+      {
+        category: 'DI',
+        items: [
+          'RUPERT NEVE DESIGNS / RNDI'
+        ]
+      }
+    ],
     portfolio: [
       {
         id: 1,
