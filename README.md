@@ -29,7 +29,7 @@ Vue.jsで構築された個人プロフィールページです。GitHub Pages�
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/hkmm0401-code/my-profile.git
+git clone https://github.com/keigo-hisazumi/my-profile.git
 
 # プロジェクトディレクトリに移動
 cd my-profile
@@ -70,7 +70,7 @@ npm run preview
 2. Source を "GitHub Actions" に設定
 3. `main` ブランチにプッシュすると自動的にデプロイされます
 
-デプロイされたサイト: `https://hkmm0401-code.github.io/my-profile/`
+デプロイされたサイト: `https://keigo-hisazumi.github.io/my-profile/`
 
 ## 📝 カスタマイズ
 
