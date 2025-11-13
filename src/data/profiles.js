@@ -25,27 +25,27 @@ export const profiles = {
       {
         category: 'フロントエンド',
         items: [
-          { name: 'Vue.js', level: 90 },
-          { name: 'React', level: 85 },
-          { name: 'JavaScript / TypeScript', level: 88 },
-          { name: 'HTML / CSS', level: 95 }
+          'Vue.js',
+          'React',
+          'JavaScript / TypeScript',
+          'HTML / CSS'
         ]
       },
       {
         category: 'バックエンド',
         items: [
-          { name: 'Node.js', level: 85 },
-          { name: 'Python', level: 80 },
-          { name: 'Spring Boot', level: 78 },
-          { name: 'Database (SQL/NoSQL)', level: 75 }
+          'Node.js',
+          'Python',
+          'Spring Boot',
+          'Database (SQL/NoSQL)'
         ]
       },
       {
         category: 'その他',
         items: [
-          { name: 'Git / GitHub', level: 90 },
-          { name: 'Docker', level: 70 },
-          { name: 'CI/CD', level: 75 }
+          'Git / GitHub',
+          'Docker',
+          'CI/CD'
         ]
       }
     ],
@@ -123,27 +123,27 @@ export const profiles = {
       {
         category: 'レコーディング',
         items: [
-          { name: 'Pro Tools', level: 95 },
-          { name: 'Logic Pro', level: 90 },
-          { name: 'Ableton Live', level: 85 },
-          { name: 'マイクロフォン技術', level: 90 }
+          'Pro Tools',
+          'Logic Pro',
+          'Ableton Live',
+          'マイクロフォン技術'
         ]
       },
       {
         category: 'ミキシング・マスタリング',
         items: [
-          { name: 'ミキシング', level: 92 },
-          { name: 'マスタリング', level: 88 },
-          { name: 'アナログ機材', level: 85 },
-          { name: 'プラグイン処理', level: 90 }
+          'ミキシング',
+          'マスタリング',
+          'アナログ機材',
+          'プラグイン処理'
         ]
       },
       {
         category: 'その他',
         items: [
-          { name: 'ライブPA', level: 87 },
-          { name: '音響デザイン', level: 83 },
-          { name: '音響機材メンテナンス', level: 80 }
+          'ライブPA',
+          '音響デザイン',
+          '音響機材メンテナンス'
         ]
       }
     ],

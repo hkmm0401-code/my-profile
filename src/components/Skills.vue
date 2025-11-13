@@ -4,14 +4,11 @@
     <div class="skills-content">
       <div v-for="category in profileData" :key="category.category" class="skill-category">
         <h3>{{ category.category }}</h3>
-        <div class="skill-items">
-          <div v-for="skill in category.items" :key="skill.name" class="skill-item">
-            <span class="skill-name">{{ skill.name }}</span>
-            <div class="skill-bar">
-              <div class="skill-level" :style="{ width: skill.level + '%' }"></div>
-            </div>
-          </div>
-        </div>
+        <ul class="skill-items">
+          <li v-for="(item, index) in category.items" :key="index" class="skill-item">
+            {{ item }}
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -64,41 +61,24 @@ export default {
 }
 
 .skill-items {
+  list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .skill-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.skill-name {
   font-size: 1rem;
-  font-weight: 500;
   color: var(--text-color);
-}
-
-.skill-bar {
-  height: 24px;
+  padding: 0.5rem 1rem;
   background-color: var(--secondary-color);
-  border-radius: 12px;
-  overflow: hidden;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-.skill-level {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), #6cb2ff);
-  transition: width 1s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 0.5rem;
-  color: white;
-  font-weight: bold;
-  font-size: 0.85rem;
+.skill-item:hover {
+  background-color: #e0e0e0;
 }
 
 @media (max-width: 768px) {
@@ -108,6 +88,10 @@ export default {
   
   .skill-category h3 {
     font-size: 1.3rem;
+  }
+  
+  .skill-item {
+    font-size: 0.95rem;
   }
 }
 </style>
